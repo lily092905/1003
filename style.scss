@@ -1,0 +1,125 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/21.jpg);//到底為什麼要..
+    background-size: cover;
+    background-position: center;
+
+    .navbar{
+        width: 95%;
+        margin: auto;
+        padding: 30px 0 ;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        ul li{
+            list-style: none;
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+
+            ::after{
+                content: '';//?? 
+                height: 1px;
+                width: 0;
+                background: #ffc107;
+                position: absolute;
+                left: 0;
+                bottom: -10px;
+                transition: .5s;
+            }
+
+            :hover::after{
+                width: 100%;
+
+            }
+
+            a{
+                text-decoration: none;
+                color: #fff;
+                font-family: sans-serif;
+            }
+        }
+
+        .logo{
+            width: 70px;
+            cursor: pointer;
+        }
+
+
+    }
+
+
+    .content{
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+
+            .title{
+                font-size: 70px;
+                line-height: 100px;//1與2的長度
+                font-weight: bold;
+                height: 100px;
+                font-family: 'Train One', cursive;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+
+                .slider{
+                    color: #ffc107;
+                    margin-left: 50px;
+                    box-sizing: border-box;//這要幹嘛??
+                    animation: slider 6s linear infinite;
+                }
+
+                @keyframes slider{
+                    0%{ margin-bottom: -300px; }
+                    20%{ margin-bottom: -300px; }
+                    25%{margin-bottom: -100px;}
+                    40%{ margin-bottom: -100px; }
+                    45%{margin-bottom: 100px;}
+                    60%{ margin-bottom: 100px; }
+                    65%{ margin-bottom:  300px; }
+                    100%{ margin-bottom: 300px; }
+                }//https://www.eztrust.com.tw/webdesign/B/38 //我要的
+            }
+
+            p{
+                margin: 10px;
+                font-weight: bold;//?2打數字跑不出來
+                line-height: 100px;
+                
+            }
+
+            button{
+                padding: 15px 50px;
+                margin: 20px;
+                font-size: 20px;
+                letter-spacing: 2px;
+                border: #ffc107 solid 2px;
+                color: black;//字的
+                cursor: pointer;
+                background: linear-gradient(to right, transparent 50%, #ffc107 50%);
+                background-size: 200%; //為什麼有了這個就變正常了why
+                background-position: left;//?//還沒動    //***
+                transition: background-position 0.5s;   //***
+            }
+
+           button:hover{
+            background-position: right;                 //***
+            color: #fff;
+        }
+    }
+}
+
+ 
